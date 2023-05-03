@@ -1,0 +1,15 @@
+<h1>Productos en Tiempo Real</h1>
+<form method="post" id="product-form">
+  <input type="text" name="title" placeholder="Title" required>
+  <input type="text" name="description" placeholder="Description" required>
+  <input type="number" name="price" placeholder="Price" required>
+  <input type="text" name="thumbnail" placeholder="Thumbnail" required>
+  <input type="text" name="code" placeholder="Code" required>
+  <input type="number" name="stock" placeholder="Stock" required>
+  <button type="submit">Agregar</button>
+</form>
+
+<ul id="product-list"></ul>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

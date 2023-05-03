@@ -4,15 +4,9 @@ import { Server } from 'socket.io';
 const router = express.Router();
 const productManager = new ProductManager();
 
-// router.get('/',(req,res) => {
-//   res.render('home', {
-//     products: 'Productos'
-//   })
-// })
-
 router.get('/', async (req, res) => {
   const products = await productManager.getProducts();
-  res.send(products);
+  res.render('home', { products });
 });
 
 router.get('/:pid', async (req, res) => {
@@ -41,10 +35,11 @@ router.post('/', async (req, res) => {
 router.put('/:pid', async (req, res) => {
   const { title, description, price, thumbnail, code, stock } = req.body;
   const updatedProduct = await productManager.updateProduct(req.params.pid, title, description, price, thumbnail, code, stock);
-  if (!updatedProduct) {
+  if (!updateProduct) {
     return res.status(404).json({ error: 'Producto no encontrado' });
   }
   res.json(updatedProduct);
+  io.emit('update');
 });
 
 router.delete('/:pid', async (req, res) => {
@@ -53,6 +48,7 @@ router.delete('/:pid', async (req, res) => {
     return res.status(404).json({ error: 'Producto no encontrado' });
   }
   res.json({ message: 'Producto eliminado correctamente' });
+  io.emit('update');
 });
 
 export default router;

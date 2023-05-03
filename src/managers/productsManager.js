@@ -15,7 +15,7 @@ class ProductManager {
       return products;
     } catch (error) {
       console.error(`Error al cargar productos: ${error}`);
-      return [];
+      return this.products;
     }
   }
 
@@ -96,6 +96,11 @@ class ProductManager {
     }
     return true;
   }
+}
+
+export async function getProducts() {
+  const productManager = new ProductManager();
+  return await productManager.getAll();
 }
 
 export default ProductManager;

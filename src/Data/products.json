@@ -43,5 +43,32 @@
 		"thumbnail": "https://www.example.com/product_thumbnail.jpg",
 		"code": "12016",
 		"stock": 15
+	},
+	{
+		"id": 6,
+		"title": "motherbaord",
+		"description": "ASUS Z390",
+		"price": "20000",
+		"thumbnail": "sin url",
+		"code": "13001",
+		"stock": "2"
+	},
+	{
+		"id": 7,
+		"title": "Motherboard",
+		"description": "H310M H 2.0",
+		"price": "18000",
+		"thumbnail": "sin url",
+		"code": "13002",
+		"stock": "5"
+	},
+	{
+		"id": 8,
+		"title": "Placa de video",
+		"description": "AsRock Radeon 570",
+		"price": "100000",
+		"thumbnail": "sin url",
+		"code": "140001",
+		"stock": "3"
 	}
 ]
